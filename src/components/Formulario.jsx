@@ -7,13 +7,17 @@ const Formulario = () => {
         <>
             <Form className='container'>
                 <Form.Group className="mb-3" controlId="inputTarea">
-                    <div className="text-center">
-                        <Form.Label>Ingresa tus Tareas</Form.Label>
+                    <div className="d-flex flex-column flex-md-row gap-2 align-items-md-start align-items-center">
+                        <Form.Control type="text" placeholder="Ingrese la tarea" />
+                        <Button
+                            variant="secondary"
+                            type="submit"
+                            className="mt-2 mt-md-0"
+                        >
+                            Enviar
+                        </Button>
                     </div>
-                    <div className="d-md-flex gap-2">
-                        <Form.Control type="text" placeholder="nombre de tarea..." />
-                        <Button variant="primary" type="submit" className="mt-2 mt-md-0">Enviar</Button>
-                    </div>
+
                 </Form.Group>
             </Form>
             <ListaTareas></ListaTareas>
