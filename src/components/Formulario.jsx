@@ -1,22 +1,51 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import ListaTareas from './ListaTareas';
+import { useState, useEffect } from 'react';
 
 const Formulario = () => {
+    // se busca si hay datos en local storage para mostrarlos en el montaje
+    const tareasLocalStorage = JSON.parse(localStorage.getItem('listaTareas')) || []
+    const [arrayTareas, setArrayTareas] = useState(tareasLocalStorage)
+    const [inputTarea, setInputTarea] = useState('')
+
+    useEffect(()=>{
+        localStorage.setItem('listaTareas',JSON.stringify(arrayTareas))
+    },[arrayTareas])
+
+    const handleSubmit = (e) => {
+        e.preventDefault()
+        const tareaBuscada = arrayTareas.find((item) => item.toLowerCase().trim() === inputTarea.toLowerCase().trim())
+        if (tareaBuscada) {
+            return alert('La tarea ya existe')
+        }
+        setArrayTareas([...arrayTareas, inputTarea.trim()])
+        setInputTarea('')
+    }
+
+    const borrarTarea = (nombreTarea) => {
+        const arrayFiltrado = arrayTareas.filter((item) => item !== nombreTarea.toLowerCase().trim())
+        setArrayTareas(arrayFiltrado)
+    }
+
     return (
         <>
-            <Form className='container'>
+            <Form className='container' onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="inputTarea">
-                    <div className="text-center">
-                        <Form.Label>Ingresa tus Tareas</Form.Label>
+                    <div className="d-flex flex-column flex-md-row gap-2 align-items-md-start align-items-center">
+                        <Form.Control type="text" placeholder="Ingrese la tarea" onChange={(e) => setInputTarea(e.target.value)} value={inputTarea} />
+                        <Button
+                            variant="secondary"
+                            type="submit"
+                            className="mt-2 mt-md-0"
+                        >
+                            Enviar
+                        </Button>
                     </div>
-                    <div className="d-md-flex gap-2">
-                        <Form.Control type="text" placeholder="nombre de tarea..." />
-                        <Button variant="primary" type="submit" className="mt-2 mt-md-0">Enviar</Button>
-                    </div>
+
                 </Form.Group>
             </Form>
-            <ListaTareas></ListaTareas>
+            <ListaTareas arrayTareas={arrayTareas} borrarTarea={borrarTarea}></ListaTareas>
         </>
     );
 };

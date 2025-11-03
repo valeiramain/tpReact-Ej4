@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <section className='container'>
-        <h1 className='text-center my-4'>Bienvenidos</h1>
+        <h1 className='text-secondary text-center py-3 fw-bold'>Bienvenidos</h1>
         <Formulario></Formulario>
       </section>
     </>

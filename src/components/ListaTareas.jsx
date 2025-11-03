@@ -1,14 +1,17 @@
 import ListGroup from 'react-bootstrap/ListGroup';
+import Button from 'react-bootstrap/Button';
+import ItemTarea from './ItemTarea';
 
-const ListaTareas = () => {
+
+const ListaTareas = ({ arrayTareas,borrarTarea }) => {
     return (
         <section className='container'>
+
             <ListGroup>
-                <ListGroup.Item>Cras justo odio</ListGroup.Item>
-                <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-                <ListGroup.Item>Morbi leo risus</ListGroup.Item>
-                <ListGroup.Item>Porta ac consectetur ac</ListGroup.Item>
-                <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
+                {
+                    arrayTareas.map((item,indice) => <ItemTarea key={indice} inputTarea={item} borrarTarea={borrarTarea}></ItemTarea>)
+                }
+
             </ListGroup>
         </section>
     );
