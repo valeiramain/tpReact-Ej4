@@ -1,18 +1,18 @@
-# 📝 Aplicación Lista de Tareas
+# 📝 Aplicación Lista de Tareas - React
 
-Aplicación web desarrollada con **React** que permite crear y gestionar una lista de tareas.  
-Las tareas se pueden agregar y eliminar, y se almacenan de forma persistente utilizando **LocalStorage**.
+Aplicación web desarrollada con **React** que permite gestionar una lista de tareas.  
+Las tareas se pueden agregar, visualizar y eliminar, y se almacenan de forma persistente utilizando **LocalStorage**.
 
 ---
 
 ## 🚀 Funcionalidades
 
-- Agregar una tarea desde un input
+- Agregar tareas desde un input
 - Enviar la tarea presionando **Enter** o el botón **Enviar**
-- Mostrar la lista de tareas ingresadas
+- Mostrar la lista de tareas
 - Eliminar tareas individualmente
 - Persistencia de datos con **LocalStorage**
-- Interfaz responsive usando **React-Bootstrap**
+- Interfaz responsive con **React-Bootstrap**
 
 ---
 
@@ -20,11 +20,10 @@ Las tareas se pueden agregar y eliminar, y se almacenan de forma persistente uti
 
 La aplicación cuenta con:
 
-- Un **formulario** que incluye:
-  - Un input para ingresar la tarea
-  - Un botón para enviar
-- Una **lista de tareas** que se muestra debajo del formulario
-- Cada tarea tiene un botón para **borrarla**
+- Un formulario con un input para ingresar la tarea
+- Un botón para enviar la tarea
+- Una lista de tareas debajo del formulario
+- Cada tarea incluye un botón para borrarla
 
 ---
 
@@ -33,9 +32,44 @@ La aplicación cuenta con:
 - ⚛️ React
 - 🎨 React-Bootstrap
 - 💾 LocalStorage
-- 📦 JavaScript
+- 📦 JavaScript (ES6+)
+- 🧩 HTML5 / CSS3
+
+---
+
+## 📂 Repositorio
+
+Repositorio del proyecto:  
+👉 https://github.com/valeiramain/tpReact-Ej4
+
+---
+
+## ⚙️ Instalación y ejecución
+
+Sigue estos pasos para clonar el repositorio y ejecutar la aplicación localmente:
+
+### 1️. Clonar el repositorio
+
+```bash
+git clone https://github.com/valeiramain/tpReact-Ej4.git
+cd tpReact-Ej4
+npm install
+npm run dev
+```
 
 
-## 🙍‍♀️ Autor
+### 2. Abrir el Navegador
 
-Valentina Iramain
+Una vez iniciado el servidor, abre el navegador en la siguiente dirección:
+
+http://localhost:5173/
+
+
+## 👨‍💻 Autor: Valentina Iramain
+
+Proyecto realizado como práctica de React.
+
+
+
+
+
